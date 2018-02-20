@@ -1,0 +1,10 @@
+{
+    "name": "neutron/coucou",
+    "authors": [
+        {
+            "name": "Romain Neutron",
+            "email": "imprec@gmail.com"
+        }
+    ],
+    "require": {}
+}
