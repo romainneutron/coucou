@@ -10,6 +10,9 @@ runtime:
 build:
     flavor: none
 
+relationships:
+    database: "my_database:postgresql"
+
 web:
     locations:
         "/":
