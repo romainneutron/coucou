@@ -8,6 +8,6 @@
     ],
     "require": {},
     "scripts": {
-        "post-install-cmd": []
+        "post-install-cmd": ["echo 'hello !'"]
     }
 }
