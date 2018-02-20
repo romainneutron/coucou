@@ -33,7 +33,7 @@ hooks:
 
         (>&2 symfony-deploy)
 
-crons:
+#crons:
 #    contributors_update:
 #        spec: 30 3 * * *
 #        cmd: croncape bin/console app:contributors-update
