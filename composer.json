@@ -6,5 +6,8 @@
             "email": "imprec@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "post-install-cmd": []
+    }
 }
