@@ -9,7 +9,7 @@ class DefaultController
 {
     public function index(Request $request)
     {
-        usleep(min(0, max(5000000, $request->query->get('usleep', 0))));
+        usleep(max(0, min(5000000, $request->query->get('usleep', 0))));
 
         return new Response('Coucou');
     }
