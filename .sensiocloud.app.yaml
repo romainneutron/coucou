@@ -1,0 +1,39 @@
+name: app
+
+type: php:7.2
+
+runtime:
+    extensions:
+        - apcu
+        - blackfire
+
+build:
+    flavor: none
+
+web:
+    locations:
+        "/":
+            root: "public"
+            passthru: "/index.php"
+
+disk: 512 # Mb
+
+mounts:
+    "/var": "shared:files/var"
+
+hooks:
+    build: | # container is read/write access - no access to shared folders - no access to services
+        set -x -e
+
+        curl -s http://get.sensio.cloud/configurator | (>&2 bash)
+        (>&2 env symfony-build)
+
+    deploy: |
+        set -x -e
+
+        (>&2 symfony-deploy)
+
+crons:
+#    contributors_update:
+#        spec: 30 3 * * *
+#        cmd: croncape bin/console app:contributors-update
